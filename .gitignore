@@ -1,0 +1,39 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+dist/
+build/
+.env
+.env.*
+.DS_Store
+*.local
+coverage/
+logs/
+*.log
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+*.tgz
+*.swp
+*.swo
+*.bak
+*.tmp
+*.orig
+*.cache/
+.nyc_output/
+.next/
+out/
+# Optional:
+# .eslintcache
+# .parcel-cache
+# .turbo/
+# .vercel/
+# .firebase/
+# .nuxt/
+# .output/
+# .expo/
+# .expo-shared/
