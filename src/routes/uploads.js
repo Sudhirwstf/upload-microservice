@@ -24,6 +24,12 @@ const router = Router();
  *         schema:
  *           type: string
  *         description: Name of the file being uploaded
+ *       - in: header
+ *         name: x-api-key
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: API key for authentication
  *     requestBody:
  *       required: true
  *       content:

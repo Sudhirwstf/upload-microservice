@@ -1,7 +1,7 @@
 import { generateApiKey, hashApiKey } from "../utils/index.js";
 import { saveApiKeyByEmail } from "../services/apiKey.js";
 
-const issueApiKey = async (req, res, next) => {
+const issueApiKey = async (req, res) => {
   const email = req.body.email;
   if (!email) return res.status(400).json({ error: "Email is required" });
 
