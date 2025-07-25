@@ -31,5 +31,15 @@ const options = {
 const swaggerSpec = swaggerJSDoc(options);
 
 export function setupSwagger(app) {
-  app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+  app.use(
+    "/api-docs",
+    swaggerUi.serve,
+    swaggerUi.setup(swaggerSpec, {
+      explorer: true, // Enables the "Authorize" and "Try it out" buttons
+      swaggerOptions: {
+        persistAuthorization: true, // Keeps API key after page reload
+        supportedSubmitMethods: ["get", "post", "put", "delete", "patch", "head", "options", "trace"],
+      },
+    })
+  );
 }
