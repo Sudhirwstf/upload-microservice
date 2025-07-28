@@ -34,7 +34,7 @@ const uploadToAzure = async (req, res) => {
   const blobServiceClient = BlobServiceClient.fromConnectionString(AZURE_STORAGE_CONNECTION_STRING);
   const containerClient = blobServiceClient.getContainerClient(AZURE_CONTAINER_NAME);
 
-  const filename = req.headers["x-filename"] + Date.now().toString();
+  const filename = Date.now().toString() + req.headers["x-filename"];
   // const webhookUrl = req.headers["x-webhook-url"];
 
   if (!filename) {
