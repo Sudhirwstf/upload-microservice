@@ -1,5 +1,4 @@
 import { BlobServiceClient } from "@azure/storage-blob";
-import axios from "axios";
 
 // Standardized error response helper
 function errorResponse(res, status, message, details = null) {
@@ -9,18 +8,18 @@ function errorResponse(res, status, message, details = null) {
 }
 
 // Retry helper for async functions
-async function retryAsync(fn, retries = 3, delay = 500) {
-  let lastErr;
-  for (let i = 0; i < retries; i++) {
-    try {
-      return await fn();
-    } catch (err) {
-      lastErr = err;
-      if (i < retries - 1) await new Promise((resolve) => setTimeout(resolve, delay));
-    }
-  }
-  throw lastErr;
-}
+// async function retryAsync(fn, retries = 3, delay = 500) {
+//   let lastErr;
+//   for (let i = 0; i < retries; i++) {
+//     try {
+//       return await fn();
+//     } catch (err) {
+//       lastErr = err;
+//       if (i < retries - 1) await new Promise((resolve) => setTimeout(resolve, delay));
+//     }
+//   }
+//   throw lastErr;
+// }
 
 const uploadToAzure = async (req, res) => {
   // Azure Blob Storage setup
